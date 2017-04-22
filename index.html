@@ -12,25 +12,30 @@
   <body>
     <form action="index.html" method="post">
       <h1>Sign up</h1>
-      <label for="company-name">Company name:
-      <input type="text" id="company-name" name="user_company-name"></label>
+      <label for="company-name">Company name:</label>
+      <input type="text" id="company-name" name="user_company-name">
+      <span>Please enter a company name</span>
 
       <label for="name">Name:</label>
       <input type="text" id="name" name="user_name">
       <span>Please enter a name</span>
 
-      <label for="email">Email address:
-      <input type="email" id="email" name="user_email"></label>
+      <label for="email">Email address:</label>
+      <input type="email" id="email" name="user_email">
+      <span>Please enter an email address</span>
 
+      <label for="phone">Phone number:</label>
+      <input type="tel" id="phone" name="user_phone">
+      <span>Please enter a phone number</span>
 
-      <label for="phone">Phone number:
-      <input type="tel" id="phone" name="user_phone"></label>
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="user_password">
+      <span>Please enter a password</span>
 
-      <label for="password">Password:
-      <input type="password" id="password" name="user_password"></label>
+      <label for="password">Password confirmation:</label>
+      <input type="password" id="password-confirm" name="user_password-confirm">
+      <span>Passwords do not match</span>
 
-      <label for="password">Password confirmation:
-      <input type="password" id="password-confirm" name="user_password-confirm"></label>
       <button type="button">CREATE ACCOUNT</button>
     </form>
     <script
