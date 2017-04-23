@@ -10,6 +10,14 @@ const $inputs = $('input');
 //Hide hints
 $("form span").hide();
 
+// Only allow numbers and other desired values in $phone input
+$phone.keydown((e) => {
+  let validArray= [48, 49, 50, 51, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8, 9, 16, 37, 39, 32];
+  if ($.inArray(e.which, validArray) !== -1) {
+    return e.which;
+  } else e.preventDefault();
+});
+
 // if ($companyName.val().length >= 1) {
 function companyNameValidate() {
   if ($companyName.is(":valid")) {

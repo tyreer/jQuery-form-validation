@@ -10,7 +10,7 @@
   </head>
 
   <body>
-    <form action="index.html" method="post">
+    <form action="index.html" method="post" autocomplete="off">
       <h1>Sign up</h1>
       <label for="companyName">Company name:</label>
       <input type="text" id="companyName" name="user_companyName" required>
@@ -36,7 +36,7 @@
       <input type="password" id="passwordConfirm" name="user_passwordConfirm" required>
       <span>Passwords do not match</span>
 
-      <button type="button">CREATE ACCOUNT</button>
+      <button type="submit">CREATE ACCOUNT</button>
     </form>
     <script
       src="http://code.jquery.com/jquery-3.2.1.min.js"
