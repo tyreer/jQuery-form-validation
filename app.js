@@ -1,3 +1,4 @@
+const $companyName = $("#company-name");
 const $name = $("#name");
 const $email = $("#email");
 const $phone = $("#phone");
@@ -8,12 +9,12 @@ const $passwordConfirm = $("#password-confirm");
 //Hide hints
 $("form span").hide();
 
-function isFreeTextValid() {
-  return $name.val().length >= 1;
+function isCompanyNameValid() {
+  return $companyName.val().length >= 1;
 }
 
-function arePasswordsMatching() {
-  return $password.val() === $passwordConfirm.val();
+function isNameValid() {
+  return $name.val().length >= 1;
 }
 
 function isEmailValid() {
@@ -26,8 +27,12 @@ function isPhoneValid() {
   return ((phoneDigits.length === 10 || phoneDigits.length === 11));
 }
 
+function arePasswordsMatching() {
+  return $password.val() === $passwordConfirm.val();
+}
+
 function canSubmit() {
-  return (isFreeTextValid() && arePasswordsMatching() &&isPhoneValid() && isEmailValid());
+  return (isCompanyNameValid() && isNameValid() &&  arePasswordsMatching() && isPhoneValid() && isEmailValid());
 }
 
 // function nameEvent(){
