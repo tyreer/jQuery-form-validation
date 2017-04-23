@@ -15,16 +15,20 @@ span {
   background-color: $button-blue;
   text-align: center;
   position: relative;
-  top: -18px;
-  width: 94%;
+  top: -11px;
   margin: auto;
   font-family: sans-serif;
-  padding: 3px 0px;
+  padding: 2px 0px;
   font-size: .9em;
+  width: 94%;
+  @media #{$medium-breakpoint} {
+    width: 96%;
+  }
 }
 
 form span {
   display: none;
+  margin-bottom: -20px;
 }
 
 form input:last-of-type{
@@ -32,7 +36,8 @@ form input:last-of-type{
 }
 
 form span:last-of-type{
-  margin-top: -37px;
+  margin-top: -50px;
+  margin-bottom: 30px;
 }
 
 button {
@@ -62,6 +67,9 @@ input {
   font-size: 1.1em;
   border: 1px solid $input-border-grey;
   border-radius: 7px;
+  @media #{$medium-breakpoint} {
+    margin: 2%;
+  }
 }
 
 input:focus {

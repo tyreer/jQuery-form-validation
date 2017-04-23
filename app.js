@@ -11,7 +11,7 @@ const $form = $('form');
 // Prevent HTML5 validation bubbles
 $inputs.on('invalid', event => event.preventDefault());
 
-// Prevent form from actually submitting 
+// Prevent form from actually submitting
 $form.on('submit', event => event.preventDefault());
 
 // Only allow numbers and other desired values in $phone input

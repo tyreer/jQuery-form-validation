@@ -384,21 +384,26 @@ span {
   background-color: #468ee9;
   text-align: center;
   position: relative;
-  top: -18px;
-  width: 94%;
+  top: -11px;
   margin: auto;
   font-family: sans-serif;
-  padding: 3px 0px;
-  font-size: .9em; }
+  padding: 2px 0px;
+  font-size: .9em;
+  width: 94%; }
+  @media (min-width: 600px) {
+    span {
+      width: 96%; } }
 
 form span {
-  display: none; }
+  display: none;
+  margin-bottom: -20px; }
 
 form input:last-of-type {
   margin-bottom: 50px; }
 
 form span:last-of-type {
-  margin-top: -37px; }
+  margin-top: -50px;
+  margin-bottom: 30px; }
 
 button {
   height: 4em;
@@ -423,6 +428,9 @@ input {
   font-size: 1.1em;
   border: 1px solid #ececec;
   border-radius: 7px; }
+  @media (min-width: 600px) {
+    input {
+      margin: 2%; } }
 
 input:focus {
   border: 1px solid #74aaeb;
