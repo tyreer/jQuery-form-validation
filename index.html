@@ -4,40 +4,42 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/application.css">
     <title>jQuery form validation</title>
 
   </head>
 
   <body>
-    <form action="index.html" method="post" autocomplete="off">
-      <h1>Sign up</h1>
-      <label for="companyName">Company name:</label>
-      <input type="text" id="companyName" name="user_companyName" required>
-      <span>Please enter a company name</span>
+    <div class="body-container">
+      <form action="index.html" method="post" autocomplete="off">
+        <h1>Sign up</h1>
+        <label for="companyName" class="screen-reader-text">Company name:</label>
+        <input type="text" id="companyName" name="user_companyName" placeholder="Company name" required>
+        <span>Please enter a company name</span>
 
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="user_name" required>
-      <span>Please enter a name</span>
+        <label for="name" class="screen-reader-text">Your name:</label>
+        <input type="text" id="name" name="user_name" placeholder="Your name" required>
+        <span>Please enter a name</span>
 
-      <label for="email">Email address:</label>
-      <input type="email" id="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" name="user_email" required>
-      <span>Please enter an email address</span>
+        <label for="email">Email address:</label>
+        <input type="email" id="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" name="user_email" required>
+        <span>Please enter an email address</span>
 
-      <label for="phone">Phone number:</label>
-      <input type="tel" id="phone" name="user_phone" required>
-      <span>Please enter a 10–11 digit UK phone number</span>
+        <label for="phone">Phone number:</label>
+        <input type="tel" id="phone" name="user_phone" required>
+        <span>Please enter a 10–11 digit UK phone number</span>
 
-      <label for="password">Password:</label>
-      <input type="password" id="password" name="user_password" required>
-      <span>Please enter a password</span>
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="user_password" required>
+        <span>Please enter a password</span>
 
-      <label for="passwordConfirm">Password confirmation:</label>
-      <input type="password" id="passwordConfirm" name="user_passwordConfirm" required>
-      <span>Passwords do not match</span>
+        <label for="passwordConfirm">Password confirmation:</label>
+        <input type="password" id="passwordConfirm" name="user_passwordConfirm" required>
+        <span>Passwords do not match</span>
 
-      <button type="submit">CREATE ACCOUNT</button>
-    </form>
+        <button type="submit">CREATE ACCOUNT</button>
+      </form>
+    </div>
     <script
       src="http://code.jquery.com/jquery-3.2.1.min.js"
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
