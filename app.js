@@ -7,15 +7,15 @@ const $passwordConfirm = $('#passwordConfirm');
 const $button = $('button');
 const $inputs = $('input');
 
-//Hide hints
-$("form span").hide();
+// Prevent HTML5 validation bubbles
+$inputs.on('invalid', event => event.preventDefault());
 
 // Only allow numbers and other desired values in $phone input
 $phone.keydown((e) => {
   let validArray= [48, 49, 50, 51, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8, 9, 16, 37, 39, 32];
-  if ($.inArray(e.which, validArray) !== -1) {
-    return e.which;
-  } else e.preventDefault();
+  if ($.inArray(event.which, validArray) !== -1) {
+    return event.which;
+  } else event.preventDefault();
 });
 
 // if ($companyName.val().length >= 1) {
