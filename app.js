@@ -1,3 +1,5 @@
+"use strict";
+
 const $companyName = $('#companyName');
 const $name = $('#name');
 const $email = $('#email');
@@ -14,7 +16,7 @@ $inputs.on('invalid', event => event.preventDefault());
 // Prevent form from actually submitting
 $form.on('submit', event => event.preventDefault());
 
-// Only allow numbers and other desired values in $phone input
+// Only allow numbers, parentheses, shift, tab, delete and arrow keys in phone input
 $phone.keydown((e) => {
   let validArray= [48, 49, 50, 51, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8, 9, 16, 37, 39, 32];
   if ($.inArray(event.which, validArray) !== -1) {
@@ -22,7 +24,7 @@ $phone.keydown((e) => {
   } else event.preventDefault();
 });
 
-// if ($companyName.val().length >= 1) {
+// Use HTML5 valid state on required inputs to show or hide the span after each input
 function companyNameValidate() {
   if ($companyName.is(":valid")) {
     $companyName.next().hide();
@@ -30,9 +32,8 @@ function companyNameValidate() {
   } else {
     $companyName.next().show();
   }
-}
+};
 
-// if ($name.val().length >= 1) {
 function nameValidate() {
   if ($name.is(":valid")) {
     $name.next().hide();
@@ -40,7 +41,7 @@ function nameValidate() {
   } else {
     $name.next().show();
   }
-}
+};
 
 function emailValidate() {
   if ($email.is(":valid")) {
@@ -49,7 +50,7 @@ function emailValidate() {
   } else {
     $email.next().show();
   }
-}
+};
 
 function phoneValidate() {
   // Remove all non digit values
@@ -62,7 +63,7 @@ function phoneValidate() {
   } else {
     $phone.next().show();
   }
-}
+};
 
 function passwordValidate() {
   if ($password.is(":valid")) {
@@ -71,7 +72,7 @@ function passwordValidate() {
   } else {
     $password.next().show();
   }
-}
+};
 
 function passwordConfirmValidate() {
   if ($password.val() === $passwordConfirm.val()) {
@@ -80,8 +81,9 @@ function passwordConfirmValidate() {
   } else {
     $passwordConfirm.next().show();
   }
-}
+};
 
+// Add validation visibility if needed. Confirm all inputs valid.
 function canSubmit() {
   companyNameValidate();
   nameValidate();
@@ -92,59 +94,17 @@ function canSubmit() {
   return (companyNameValidate() && nameValidate() && phoneValidate() && emailValidate() && passwordValidate() && passwordConfirmValidate());
 }
 
-// function nameEvent(){
-//     //Find out if name is valid
-//     if(isNameValidate()) {
-//       //Hide hint if valid
-//       $name.next().hide();
-//     } else {
-//       //else show hint
-//       $name.next().show();
-//     }
-// }
-//
-// function passwordEvent(){
-//     //Find out if password is valid
-//     if(isFreeTextValidate()) {
-//       //Hide hint if valid
-//       $password.next().hide();
-//     } else {
-//       //else show hint
-//       $password.next().show();
-//     }
-// }
+// Respond to UI by calling validate function on relevant input on keyup
+function assistValidate() {
+  let functionName = `${this.id}Validate`;
+  window[functionName]();
+}
 
-// function confirmPasswordEvent() {
-//   //Find out if password and confirmation match
-//   if(arePasswordsMatching()) {
-//     //Hide hint if match
-//     $confirmPassword.next().hide();
-//   } else {
-//     //else show hint
-//     $confirmPassword.next().show();
-//   }
-// }
-
-
-// When event happens on any input
-// $("input").keyup(stupid);
-//
-// function stupid() {
-//   let functionName = `${this.id}Validate`;
-//   console.log(functionName);
-//   window[functionName]();
-// }
-
+// Trigger validation check in UI
 $button.on('click', function() {
   if (canSubmit()){
     $('button').replaceWith('<h3>Successfully submitted!</h3>');
   }
 
   $inputs.keyup(assistValidate);
-
-  function assistValidate() {
-    let functionName = `${this.id}Validate`;
-    window[functionName]();
-  }
-
 })

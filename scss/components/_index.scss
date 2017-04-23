@@ -1,27 +1,5 @@
 // —————————————————————————————————————————————————————————————————————
-// Base styles + utility classes
+// Components imports
 // —————————————————————————————————————————————————————————————————————
 
-* {
-  font-family: sans-serif;
-}
-
-h1 {
-  text-align: center;
-  font-size: 1.8em;
-}
-
-h3 {
-  text-align: center;
-  color: $button-blue;
-}
-
-// Positions input labels out of view while remaining accessible to screen readers
-.screen-reader-text {
-  position: absolute;
-  left: -10000px;
-  top: auto;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-}
+@import 'components';
