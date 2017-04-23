@@ -10,20 +10,23 @@
   </head>
 
   <body>
+    <header>
+      <h1>Sign up</h1>
+    </header>
+
     <div class="body-container">
       <form action="index.html" method="post" autocomplete="off">
-        <h1>Sign up</h1>
         <label for="companyName" class="screen-reader-text">Company Name</label>
         <input type="text" id="companyName" name="user_companyName" placeholder="Company Name" required>
-        <span>Please enter a company name</span>
+        <span>Required</span>
 
         <label for="name" class="screen-reader-text">Your Name</label>
         <input type="text" id="name" name="user_name" placeholder="Your Name" required>
-        <span>Name required</span>
+        <span>Required</span>
 
         <label for="email" class="screen-reader-text">Email Address</label>
         <input type="email" id="email" pattern="[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?" name="user_email" placeholder="Email address" required>
-        <span>Email address required</span>
+        <span>Required</span>
 
         <label for="phone" class="screen-reader-text">Phone Number</label>
         <input type="tel" id="phone" name="user_phone" placeholder="Phone Number" required>
@@ -31,7 +34,7 @@
 
         <label for="password" class="screen-reader-text">Password</label>
         <input type="password" id="password" name="user_password" placeholder="Password" required>
-        <span>Password required</span>
+        <span>Required</span>
 
         <label for="passwordConfirm" class="screen-reader-text">Password Confirmation</label>
         <input type="password" id="passwordConfirm" name="user_passwordConfirm" placeholder="Confirm Password" required>
