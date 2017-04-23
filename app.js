@@ -6,9 +6,13 @@ const $password = $('#password');
 const $passwordConfirm = $('#passwordConfirm');
 const $button = $('button');
 const $inputs = $('input');
+const $form = $('form');
 
 // Prevent HTML5 validation bubbles
 $inputs.on('invalid', event => event.preventDefault());
+
+// Prevent form from actually submitting 
+$form.on('submit', event => event.preventDefault());
 
 // Only allow numbers and other desired values in $phone input
 $phone.keydown((e) => {
@@ -133,7 +137,8 @@ function canSubmit() {
 
 $button.on('click', function() {
   if (canSubmit()){
-    $button.replaceWith('<h3>Successfully submitted. Thank you!</h3>');
+    $('button').replaceWith('<h3>Successfully submitted. Thank you!</h3>');
+    // $form[0].reset();
   }
 
   $inputs.keyup(assistValidate);
@@ -142,7 +147,5 @@ $button.on('click', function() {
     let functionName = `${this.id}Validate`;
     window[functionName]();
   }
-  // else {
-  //   alert("NAH BRAH");
-  // }
+
 })
