@@ -137,8 +137,7 @@ function canSubmit() {
 
 $button.on('click', function() {
   if (canSubmit()){
-    $('button').replaceWith('<h3>Successfully submitted. Thank you!</h3>');
-    // $form[0].reset();
+    $('button').replaceWith('<h3>Successfully submitted!</h3>');
   }
 
   $inputs.keyup(assistValidate);

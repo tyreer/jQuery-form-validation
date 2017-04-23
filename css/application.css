@@ -369,6 +369,9 @@ template {
 [hidden] {
   display: none; }
 
+* {
+  font-family: sans-serif; }
+
 body {
   margin: 0;
   height: 100vh; }
@@ -386,7 +389,6 @@ span {
   position: relative;
   top: -11px;
   margin: auto;
-  font-family: sans-serif;
   padding: 2px 0px;
   font-size: .9em;
   width: 94%; }
@@ -418,8 +420,11 @@ button {
 
 h1 {
   text-align: center;
-  font-family: sans-serif;
   font-size: 1.8em; }
+
+h3 {
+  text-align: center;
+  color: #468ee9; }
 
 input {
   height: 2.4em;
