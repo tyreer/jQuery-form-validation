@@ -1,8 +1,8 @@
 /*input:invalid {
   border: 2px dashed red;
-}
+}*/
 
-input:valid {
+/*input:valid {
   border: 2px solid green;
 }*/
 
@@ -13,4 +13,8 @@ form {
   margin: auto;
   border: 5px solid blue;
   padding: 5%;
+}
+
+span {
+  color: red;
 }

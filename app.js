@@ -1,22 +1,28 @@
-const $companyName = $('#company-name');
+const $companyName = $('#companyName');
 const $name = $('#name');
 const $email = $('#email');
 const $phone = $('#phone');
 const $password = $('#password');
-const $passwordConfirm = $('#password-confirm');
+const $passwordConfirm = $('#passwordConfirm');
 const $button = $('button');
-// let failureArray = [];
-
+const $inputs = $('input');
 
 //Hide hints
 $("form span").hide();
 
-function isCompanyNameValid() {
-  return $companyName.val().length >= 1;
+// if ($companyName.val().length >= 1) {
+function companyNameValidate() {
+  if ($companyName.is(":valid")) {
+    $companyName.next().hide();
+    return true;
+  } else {
+    $companyName.next().show();
+  }
 }
 
-function isNameValid() {
-  if ($name.val().length >= 1) {
+// if ($name.val().length >= 1) {
+function nameValidate() {
+  if ($name.is(":valid")) {
     $name.next().hide();
     return true;
   } else {
@@ -24,38 +30,70 @@ function isNameValid() {
   }
 }
 
-function isEmailValid() {
-  return $email.is(":valid")
+function emailValidate() {
+  if ($email.is(":valid")) {
+    $email.next().hide();
+    return true;
+  } else {
+    $email.next().show();
+  }
 }
 
-function isPhoneValid() {
+function phoneValidate() {
+  // Remove all non digit values
   const phoneDigits = $phone.val().replace(/\D/g,'');
-  // Incomplete validation. Matches most UK numbers though
-  return (phoneDigits.length === 10 || phoneDigits.length === 11);
+
+  // Not a perfect validation condition, but matches most UK numbers
+  if (phoneDigits.length === 10 || phoneDigits.length === 11) {
+    $phone.next().hide();
+    return true;
+  } else {
+    $phone.next().show();
+  }
 }
 
-function arePasswordsMatching() {
-  return $password.val() === $passwordConfirm.val();
+function passwordValidate() {
+  if ($password.is(":valid")) {
+    $password.next().hide();
+    return true;
+  } else {
+    $password.next().show();
+  }
+}
+
+function passwordConfirmValidate() {
+  if ($password.val() === $passwordConfirm.val()) {
+    $passwordConfirm.next().hide();
+    return true;
+  } else {
+    $passwordConfirm.next().show();
+  }
 }
 
 function canSubmit() {
-  return (isCompanyNameValid() && isNameValid() &&  arePasswordsMatching() && isPhoneValid() && isEmailValid());
+  companyNameValidate();
+  nameValidate();
+  phoneValidate();
+  emailValidate();
+  passwordValidate();
+  passwordConfirmValidate();
+  return (companyNameValidate() && nameValidate() && phoneValidate() && emailValidate() && passwordValidate() && passwordConfirmValidate());
 }
 
-function nameEvent(){
-    //Find out if name is valid
-    if(isNameValid()) {
-      //Hide hint if valid
-      $name.next().hide();
-    } else {
-      //else show hint
-      $name.next().show();
-    }
-}
+// function nameEvent(){
+//     //Find out if name is valid
+//     if(isNameValidate()) {
+//       //Hide hint if valid
+//       $name.next().hide();
+//     } else {
+//       //else show hint
+//       $name.next().show();
+//     }
+// }
 //
 // function passwordEvent(){
 //     //Find out if password is valid
-//     if(isFreeTextValid()) {
+//     if(isFreeTextValidate()) {
 //       //Hide hint if valid
 //       $password.next().hide();
 //     } else {
@@ -76,12 +114,25 @@ function nameEvent(){
 // }
 
 
-//When event happens on name input
-// $name.focus(nameEvent).keyup(nameEvent);
+// When event happens on any input
+// $("input").keyup(stupid);
+//
+// function stupid() {
+//   let functionName = `${this.id}Validate`;
+//   console.log(functionName);
+//   window[functionName]();
+// }
 
 $button.on('click', function() {
   if (canSubmit()){
     $button.replaceWith('<h3>Successfully submitted. Thank you!</h3>');
+  }
+
+  $inputs.keyup(assistValidate);
+
+  function assistValidate() {
+    let functionName = `${this.id}Validate`;
+    window[functionName]();
   }
   // else {
   //   alert("NAH BRAH");
