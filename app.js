@@ -11,13 +11,13 @@ const $inputs = $('input');
 const $form = $('form');
 
 // Prevent HTML5 validation bubbles
-$inputs.on('invalid', event => event.preventDefault());
+$inputs.on('invalid', () => event.preventDefault());
 
 // Prevent form from actually submitting
-$form.on('submit', event => event.preventDefault());
+$form.on('submit', () => event.preventDefault());
 
 // Only allow numbers, parentheses, shift, tab, delete and arrow keys in phone input
-$phone.keydown((e) => {
+$phone.keydown( () => {
   let validArray= [48, 49, 50, 51, 50, 51, 52, 53, 54, 55, 56, 57, 0, 8, 9, 16, 37, 39, 32];
   if ($.inArray(event.which, validArray) !== -1) {
     return event.which;
