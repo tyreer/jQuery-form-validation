@@ -30,7 +30,7 @@ function companyNameValidate() {
     $companyName.next().hide();
     return true;
   } else {
-    $companyName.next().show();
+    $companyName.next().fadeIn(150);
   }
 };
 
@@ -39,7 +39,7 @@ function nameValidate() {
     $name.next().hide();
     return true;
   } else {
-    $name.next().show();
+    $name.next().fadeIn(150);
   }
 };
 
@@ -48,7 +48,7 @@ function emailValidate() {
     $email.next().hide();
     return true;
   } else {
-    $email.next().show();
+    $email.next().fadeIn(150);
   }
 };
 
@@ -61,7 +61,7 @@ function phoneValidate() {
     $phone.next().hide();
     return true;
   } else {
-    $phone.next().show();
+    $phone.next().fadeIn(150);
   }
 };
 
@@ -70,7 +70,7 @@ function passwordValidate() {
     $password.next().hide();
     return true;
   } else {
-    $password.next().show();
+    $password.next().fadeIn(150);
   }
 };
 
@@ -79,7 +79,7 @@ function passwordConfirmValidate() {
     $passwordConfirm.next().hide();
     return true;
   } else {
-    $passwordConfirm.next().show();
+    $passwordConfirm.next().fadeIn(150);
   }
 };
 
