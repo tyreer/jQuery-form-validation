@@ -413,37 +413,42 @@ span {
   background-color: #468ee9;
   text-align: center;
   position: relative;
-  top: -11px;
+  top: -2.6vw;
   margin: auto;
   padding: 2px 0px;
   font-size: .9em;
-  width: 94%; }
+  width: 95%; }
   @media (min-width: 600px) {
     span {
-      width: 96%; } }
+      width: 97%;
+      top: -1.3vw; } }
 
 form span {
   display: none;
   margin-bottom: -20px; }
 
 form input:last-of-type {
-  margin-bottom: 50px; }
+  margin-bottom: 35px; }
 
 form span:last-of-type {
-  margin-top: -50px;
-  margin-bottom: 30px; }
+  margin-top: -32px;
+  margin-bottom: 12px; }
+  @media (min-width: 600px) {
+    form span:last-of-type {
+      margin-top: -31px;
+      margin-bottom: 11px; } }
 
 input {
   height: 2.4em;
   background-color: #fafafa;
-  margin: 3%;
   font-size: 1.1em;
   padding-left: 15px;
   border: 1px solid #ececec;
-  border-radius: 7px; }
+  border-radius: 7px;
+  margin: 2vw; }
   @media (min-width: 600px) {
     input {
-      margin: 2%; } }
+      margin: .6vw; } }
 
 input:focus {
   border: 1px solid #74aaeb;

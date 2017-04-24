@@ -11,15 +11,21 @@ span {
   background-color: $button-blue;
   text-align: center;
   position: relative;
-  top: -11px;
+  top: -2.6vw;
   margin: auto;
   padding: 2px 0px;
   font-size: .9em;
-  width: 94%;
+  width: 95%;
   @media #{$medium-breakpoint} {
-    width: 96%;
+    width: 97%;
+    top: -1.3vw;
+    // width: 91%;
   }
 }
+
+// width: 97%;
+//     margin-left: 1.45%;
+//     margin-right: 1.45%;
 
 // —————————————————————————————————————————————————————————————————————
 // Form
@@ -31,15 +37,23 @@ form span {
   margin-bottom: -20px;
 }
 
+
 // Makes space below last input
 form input:last-of-type{
-  margin-bottom: 50px;
+  margin-bottom: 35px;
+  // margin-bottom: 50px;
 }
 
 // Makes space below last  validation helper text span and accounts for height when displayed
 form span:last-of-type{
-  margin-top: -50px;
-  margin-bottom: 30px;
+  margin-top: -32px;
+  margin-bottom: 12px;
+  @media #{$medium-breakpoint} {
+    margin-top: -31px;
+    margin-bottom: 11px;
+    // margin-top: -17px;
+    // margin-bottom: -3px;
+  }
 }
 
 
@@ -50,13 +64,16 @@ form span:last-of-type{
 input {
   height: 2.4em;
   background-color: $input-grey;
-  margin: 3%;
   font-size: 1.1em;
   padding-left: 15px;
   border: 1px solid $input-border-grey;
   border-radius: 7px;
+  margin: 2vw;
+  // margin: 9px;
   @media #{$medium-breakpoint} {
-    margin: 2%;
+    margin: .6vw;
+    // margin: 1.5vw;
+    // margin: 6px;
   }
 }
 
