@@ -52,6 +52,7 @@ input {
   background-color: $input-grey;
   margin: 3%;
   font-size: 1.1em;
+  padding-left: 15px;
   border: 1px solid $input-border-grey;
   border-radius: 7px;
   @media #{$medium-breakpoint} {
