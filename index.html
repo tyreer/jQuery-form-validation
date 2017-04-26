@@ -10,11 +10,11 @@
 
   <body>
     <header role="banner">
-      <h1>Sign up</h1>
+      <h1 id="sign-up-title">Sign up</h1>
     </header>
 
     <main role="main" class="body-container">
-      <form action="index.html" method="post">
+      <form action="index.html" method="post" aria-describedby="sign-up-title">
         <label for="companyName" class="screen-reader-text">Company Name</label>
         <input type="text" id="companyName" name="user_companyName" placeholder="Company Name" required>
         <span>Required</span>
